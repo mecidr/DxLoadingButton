@@ -571,7 +571,6 @@ class LoadingButton @JvmOverloads constructor(
         mLoadingAnimatorSet?.cancel()
         mLoadingAnimatorSet = AnimatorSet()
         mLoadingAnimatorSet!!.doOnEnd {
-            isEnabled = true
             updateButtonColor()
         }
         if (isReverse) {
@@ -696,6 +695,7 @@ class LoadingButton @JvmOverloads constructor(
                     doOnEnd {
                         mCurrentState = STATE_ANIMATION_STEP2
                         playStartAnimation(true)
+                       
                     }
                 }.start()
     }
